@@ -15,7 +15,7 @@ data "aws_ami" "ubuntu" {
 }
 
 provider "aws" {
-  region  = "ap-south-1"
+  region  = var.ec2_name
 }
 
 resource "aws_instance" "app_server" {
