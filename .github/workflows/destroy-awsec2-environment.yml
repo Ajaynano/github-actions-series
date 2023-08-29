@@ -1,0 +1,15 @@
+name: Step 6, Production deployment cleanup
+
+# This workflow updates from step 6 to step X.
+
+# This will run after the "Configure Azure environment" workflow
+# completes on the production-deployment-workflow branch
+# Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Provision t2.micro EC2"]
+    types: [completed]
+    branches: [master]
+
+jobs:
