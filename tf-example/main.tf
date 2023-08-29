@@ -32,7 +32,6 @@ resource "aws_security_group" "launch-wizard-1" {
 
   ingress {
     description = "SSH from the internet"
-    name = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -41,7 +40,6 @@ resource "aws_security_group" "launch-wizard-1" {
 
   ingress {
     description = "80 from the internet"
-    name = "HTTP"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
