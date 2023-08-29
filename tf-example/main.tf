@@ -14,8 +14,17 @@ data "aws_ami" "ubuntu" {
     owners = ["099720109477"] # Canonical
 }
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
 provider "aws" {
-  region  = var.ec2_name
+  region  = "ap-south-1"
 }
 
 resource "aws_instance" "app_server" {
