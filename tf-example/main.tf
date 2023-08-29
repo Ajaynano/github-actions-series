@@ -59,6 +59,7 @@ resource "aws_instance" "app_server" {
   vpc_security_group_ids = [aws_security_group.launch-wizard-1.id]
   associate_public_ip_address = true
   key_name      = "app-ssh-key"
+  user_data = "${file("ec2-user-data.sh")}"
 
   tags = {
     Name = var.ec2_name
